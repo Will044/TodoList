@@ -3,7 +3,7 @@ const inputText = document.getElementById("inputText");
 // 宣告新增按鈕常數
 const addBtn = document.getElementById("addBtn");
 // 宣告待辦事項表格常數
-const todoList = document.getElementById("todoList");
+const todoList = document.getElementById("toDoList");
 // 宣告儲存所有要做的動作變數
 let todoData = [];
 
@@ -52,7 +52,7 @@ function render(arr) {
     `
   });
   // 將組合的新字串str渲染到待辦事項的表格上
-  todoList.innerHTML = str;  
+  toDoList.innerHTML = str;  
 }
 
 // 刪除單筆/切換打勾
@@ -68,12 +68,12 @@ function deleteAndChecked(e){
     e.preventDefault();
     // 若class的值等於delete
     // 就刪除屬性是id的物件
-    todoData = todoData.filter((item) => item.id != li_id );
+    todoData = todoData.filter((item3) => item3.id != li_id );
   } else {
     // 若class的值不等於delete
     // 就切換狀態功能
-    todoData.forEach((item, index) => {
-      if( item.id == li-id ){
+    todoData.forEach((item4, index) => {
+      if( item4.id == li_id ){
         if( todoData[index].checked == "checked" ){
           todoData[index].checked = "";
         } else {
@@ -99,8 +99,8 @@ function changeTab(e) {
   // 宣告標籤項目（類陣列）
   let tabs = document.querySelectorAll("#tab li");
   // 標籤項目（類陣列）跑回圈，每次一開始點擊都先清除active
-  tabs.forEach((item) => {      
-    item.classList.remove("active");      
+  tabs.forEach((item2) => {      
+    item2.classList.remove("active");      
   });
   // 然後點擊後再加上active
   e.target.classList.add("active");
@@ -114,12 +114,12 @@ function updateList() {
   if( toggleStatus == "all" ){
     showData = todoData;
   } else if ( toggleStatus == "work" ){
-    showData = todoData.filter((item) => item.checked == "" );
+    showData = todoData.filter((item5) => item5.checked == "" );
   } else {
-    showData = todoData.filter((item) => item.checked == "checked" );
+    showData = todoData.filter((item5) => item5.checked == "checked" );
   }
   const workNum = document.getElementById("workNum");
-  let toBeCom = todoData.filter((item) => item.checked == "" );
+  let toBeCom = todoData.filter((item5) => item5.checked == "" );
   workNum.textContent = toBeCom.length;
   
   render(showData);
