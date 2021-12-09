@@ -72,8 +72,8 @@ function deleteAndChecked(e){
   } else {
     // 若class的值不等於delete
     // 就切換狀態功能
-    todoData.forEach((item4, index) => {
-      if( item4.id == li_id ){
+    todoData.forEach((item, index) => {
+      if( item.id == li-id ){
         if( todoData[index].checked == "checked" ){
           todoData[index].checked = "";
         } else {
@@ -99,8 +99,8 @@ function changeTab(e) {
   // 宣告標籤項目（類陣列）
   let tabs = document.querySelectorAll("#tab li");
   // 標籤項目（類陣列）跑回圈，每次一開始點擊都先清除active
-  tabs.forEach((item2) => {      
-    item2.classList.remove("active");      
+  tabs.forEach((item) => {      
+    item.classList.remove("active");      
   });
   // 然後點擊後再加上active
   e.target.classList.add("active");
